@@ -1,4 +1,7 @@
 .chatInfo {
-  background-color: blue;
   flex: 2;
+}
+.profile-img{
+  border-radius: 50%;
+  height: 8.0rem;
 }

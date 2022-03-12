@@ -1,4 +1,28 @@
 .options {
-  background-color: green;
   flex: 1.5;
+  background-color: rgb(238,238,238);
+}
+.heading{
+  color: #777;
+}
+.options-profile-img{
+  border-radius: 50%;
+  height: 4.0rem;
+}
+.icon-img{
+  border-radius: 50%;
+  height: 1.4rem;
+}
+.btn-options{
+  text-decoration: none;
+  color: #000;
+  font-size: 1.3rem;
+  font-weight: lighter;
+}
+.options-a{
+  margin-top: 2.0rem;
+  column-gap: 3.9rem;
+}
+.btn-options:hover{
+  color: purple;
 }
