@@ -5,3 +5,27 @@
   border-radius: 50%;
   height: 8.0rem;
 }
+.icon-img{
+  border-radius: 50%;
+  height: 1.4rem;
+  color: #000;
+  font-size: 1.3rem;
+  font-weight: lighter;
+}
+textarea{
+  resize: none;
+  height: 0.8rem;
+  width: 10rem;
+  margin-left: 50px;
+}
+.text-role{
+  resize: none;
+  height: 0.8rem;
+  width: 10rem;
+  margin-left: 83px;
+}
+.Info-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
