@@ -1,0 +1,49 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+.wrapper {
+  font-family: "Source Sans Pro", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper > * {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+.sub-text {
+  color: #424242;
+  font-size: 15px;
+}
+
+.wrapper > input {
+  outline: 0;
+}
+
+.main-button {
+  border: 0;
+  background-color: rgb(69, 52, 228);
+  color: white;
+  cursor: pointer;
+}
+
+.OTP__check {
+  display: flex;
+  justify-content: space-between;
+}
+
+.OTP__check > input {
+  outline: 0;
+  margin-right: 0.5rem;
+  padding: 0.5rem;
+  padding-left: 0.5rem;
+  flex: 1;
+}
+
+.OTP__check > button {
+  border: 0;
+  background-color: rgb(69, 52, 228);
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem;
+}
