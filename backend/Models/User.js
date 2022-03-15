@@ -31,10 +31,15 @@ const UserSchema = new Schema({
         required : false,
         default : 0
     },
-    activeChats : {
+    activeChatsGroup: {
         type : [String],
         required : true,
-        default : null
+        default : []
+    },
+    activeChatOne : {
+        type : String,
+        required : true,
+        default : []
     }
 });
 
