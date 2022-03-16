@@ -25,6 +25,13 @@ function AllChat() {
           <Person selected = {true}/>
           <Person selected = {false}/>
           <Person selected = {false}/>
+          <Person selected = {false}/>
+          <Person selected = {false}/>
+          <Person selected = {false}/>
+          <Person selected = {false}/>
+          <Person selected = {false}/>
+          <Person selected = {false}/>
+          <Person selected = {false}/>
         </div>
         
     </div>
