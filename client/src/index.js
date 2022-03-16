@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {ProfileContextProvider} from './Contexts/GlobalState';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ProfileContextProvider>
+      <App />
+    </ProfileContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

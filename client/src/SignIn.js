@@ -13,10 +13,11 @@ function SignIn() {
                 <img src = {pic} className='signIn__image'/>
             </div>
             <div className='info'>
-                <Carousel className='slider'>
-                    <EmailInfo/>
+                <EmailInfo/>
+                {/* <Carousel className='slider'>
+                    
                     <PhoneNumberInfo/>
-                </Carousel>
+                </Carousel> */}
             </div>
         </div>
     </div>

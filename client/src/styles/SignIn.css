@@ -29,9 +29,37 @@
   display: flex;
   align-items: center;
   padding: 0 1rem;
+  justify-content: center;
 }
 
 .signIn__image {
   width: 50%;
   height: 50%;
+}
+
+.container__info {
+  background-color: white;
+  flex: 1.25;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  justify-content: center;
+}
+
+.login__info {
+  font-family: "Source Sans Pro", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.login__info > * {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+.login__info > button {
+  border: 0;
+  background-color: rgb(69, 52, 228);
+  color: white;
+  cursor: pointer;
 }
