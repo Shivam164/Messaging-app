@@ -1,0 +1,65 @@
+.outerBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(202, 238, 238);
+  margin: 0;
+  height: 100vh;
+}
+
+.innerContainer {
+  display: flex;
+  width: 80vw;
+  height: 80vh;
+  box-shadow: 0 0 12px rgb(69, 52, 228);
+}
+
+.progress {
+  background-color: rgb(69, 52, 228);
+  flex: 0.75;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info {
+  background-color: white;
+  flex: 1.25;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  justify-content: center;
+}
+
+.signIn__image {
+  width: 50%;
+  height: 50%;
+}
+
+.container__info {
+  background-color: white;
+  flex: 1.25;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  justify-content: center;
+}
+
+.login__info {
+  font-family: "Source Sans Pro", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.login__info > * {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+.login__info > button {
+  border: 0;
+  background-color: rgb(69, 52, 228);
+  color: white;
+  cursor: pointer;
+}

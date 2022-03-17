@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap");
+
+.allChat {
+  background-color: white;
+  border: 2px solid lightgray;
+  flex: 2;
+  font-family: "Source Sans Pro", sans-serif;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.allChat::-webkit-scrollbar {
+  display: none;
+}
+
+.allChat__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0.1rem;
+  padding-right: 0.5rem;
+  border-bottom: 1px solid lightgray;
+}
+
+.header__text > button {
+  all: unset;
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.header__text > button:nth-child(1) {
+  background-color: rgb(238, 238, 238);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.header__text > button:nth-child(3) {
+  padding: 0.2rem 0.4rem;
+  border: 2px solid rgb(202, 202, 202);
+  border-style: dashed;
+  border-radius: 4px;
+}
+
+.header__icons > * {
+  padding-left: 0.5rem;
+}
+
+.allPerson {
+  margin-top: 0.6rem;
+}
