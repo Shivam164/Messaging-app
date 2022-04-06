@@ -22,7 +22,7 @@ const submitDetails = (e) => {
                     <h1>Login to Your Account</h1>
                     <input placeholder='Enter Your Email' value = {email} onChange = {e => setEmail(e.target.value)} />
                     <input placeholder='Enter Your Password' type = 'password' value = {password} onChange = {e => setPassword(e.target.value)}/>
-                    <button onClick = {submitDetails}>Sign Up</button>
+                    <button onClick = {submitDetails}>Log in</button>
                 </div>
             </div>
         </div>

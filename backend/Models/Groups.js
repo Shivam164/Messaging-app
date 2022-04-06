@@ -1,19 +1,21 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const MessageSchema = require('./Messages');
+const UserSchema = require('./User');
 
 const GroupSchema = new Schema({
-    groupId:{
-        type : String,
+    members: {
+        type : [UserSchema],
         required : true
     },
-    memberId: {
-        type : String,
-        required : true
+    isGroupChat : {
+        type : Boolean,
+        default : false
     },
     groupAvatar : {
-        type : Number,
+        type : String,
         required : false,
-        default : 0
+        default : "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
     },
     groupDescription: {
         type : String,
@@ -24,6 +26,10 @@ const GroupSchema = new Schema({
         type : [MessageSchema],
         required : false,
         default : []
+    },
+    groupLastMessage : {
+        type : MessageSchema,
+        required : true
     }
 });
 

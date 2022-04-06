@@ -37,18 +37,16 @@ function EmailInfo() {
 
   return (
     <div className='emailInfo'>
-        <h1>Get Started with Google</h1>
-        {/* <input placeholder='Enter Your Name' value = {name} onChange = {(e) => setName(e.target.value)}/>
+        <h1>Get Started with Sign Up</h1>
+        <input placeholder='Enter Your Name' value = {name} onChange = {(e) => setName(e.target.value)}/>
         <input placeholder='Enter Your Email' value = {email} onChange = {e => setEmail(e.target.value)} />
-        <input placeholder='Enter Your Password' type = 'password' value = {password} onChange = {e => setPassword(e.target.value)}/> */}
+        <input placeholder='Enter Your Password' type = 'password' value = {password} onChange = {e => setPassword(e.target.value)}/>
 
-        {/* <button onClick = {submitDetails}>Sign Up</button> */}
-        <button onClick={handleGoogleAuth}>Sign In With Google</button>
-        {/* {moveOn && <h1>Move on to next </h1>} */}
-        {/* <div className='logIn'>
+        <button onClick = {submitDetails}>Sign Up</button>
+        <div className='logIn'>
             <span>Already have an account?</span>
             <button onClick={moveToLoginPage}>Log in</button>
-        </div> */}
+        </div>
 
     </div>
   )
