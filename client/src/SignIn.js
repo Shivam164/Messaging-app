@@ -2,7 +2,7 @@ import React from 'react'
 import './styles/SignIn.css';
 import Carousel from 'react-elastic-carousel';
 import EmailInfo from './EmailInfo';
-import PhoneNumberInfo from './PhoneNumberInfo';
+import OTPverify from './OTPverify';
 import pic from './assets/signIn-img.png';
 
 function SignIn() {
@@ -13,11 +13,11 @@ function SignIn() {
                 <img src = {pic} className='signIn__image'/>
             </div>
             <div className='info'>
-                <EmailInfo/>
-                {/* <Carousel className='slider'>
-                    
-                    <PhoneNumberInfo/>
-                </Carousel> */}
+                
+                <Carousel className='slider'>
+                    <EmailInfo/>
+                    <OTPverify/>
+                </Carousel>
             </div>
         </div>
     </div>

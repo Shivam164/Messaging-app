@@ -42,6 +42,7 @@ function EmailInfo() {
         <input placeholder='Enter Your Email' value = {email} onChange = {e => setEmail(e.target.value)} />
         <input placeholder='Enter Your Password' type = 'password' value = {password} onChange = {e => setPassword(e.target.value)}/>
 
+
         <button onClick = {submitDetails}>Sign Up</button>
         <div className='logIn'>
             <span>Already have an account?</span>
