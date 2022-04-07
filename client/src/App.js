@@ -8,30 +8,25 @@ import SignIn from './SignIn';
 import LogIn from './LogIn';
 import { useContext } from 'react';
 import { ProfileContext } from './Contexts/GlobalState';
+import PrivateRoute from './routing/PrivateRoute';
+import Contacts from './Contacts';
+import Home from './Home';
 
 function App() {
 
   const {signedIn} = useContext(ProfileContext);
 
-
   return (
     <Router>
       <div className="App">
         <Switch>
-          <Route exact path = "/">
-            {!signedIn && <SignIn/>}
-            {signedIn && <Options/>}
-            {signedIn && <AllChat/>}
-            {signedIn &&<MessagesSection/>}
-            {signedIn && <ChatInfo/>}
-          </Route>
-          <Route exact path = "/login">
-            <LogIn/>
-          </Route>
+          <PrivateRoute exact path = "/" component={Home} />
+          <PrivateRoute exact path = "/contacts" component={Contacts}/>
+          <Route exact path = "/signup" component={SignIn}/>
+          <Route exact path = "/login" component={LogIn}/>
         </Switch>
       </div>
     </Router>
-    
   );
 }
 

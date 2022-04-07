@@ -102,6 +102,9 @@ exports.login = async function(req, res, next){
     try{
         const user = await User.findOne({emailId}).select("+password");
         console.log(user);
+        if(!user){
+            return next(new ErrorResponse("Invalid Credentials", 401));
+        }
         const isMatch = await user.matchPasswords(password);
         if(!isMatch){
             return next(new ErrorResponse("Invalid Credentials", 401));

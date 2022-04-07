@@ -5,15 +5,13 @@ import SearchIcon from '@mui/icons-material/Search';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SettingsIcon from '@mui/icons-material/Settings';
 import AddIcon from '@mui/icons-material/Add';
+import { useHistory } from 'react-router-dom';
 
 function Options() {
 
   const {profile} = useContext(ProfileContext);
-  useEffect(() => {
-    console.log(profile);
-  },[])
-
-
+  const history = useHistory();
+  
   return (
     <div className='options'>
       <div className='options__header'>
@@ -22,12 +20,12 @@ function Options() {
       </div>
 
       <div className="user__options">
-        <a href='' className='btn-options'><SearchIcon/>  <p>Search</p>
-        </a>
-        <a href='' className='btn-options'><AccountCircleIcon/>  <p>Contacts</p>
-        </a>
-        <a href='' className='btn-options'><SettingsIcon/>  <p>Settings</p>
-        </a>
+        <button className='btn-options'><SearchIcon/><p>Search</p>
+        </button>
+        <button className='btn-options' onClick={() => history.push('/contacts')}><AccountCircleIcon/>  <p>Contacts</p>
+        </button>
+        <button className='btn-options'><SettingsIcon/>  <p>Settings</p>
+        </button>
       </div>
       
         <div className='options-a' align='left'>

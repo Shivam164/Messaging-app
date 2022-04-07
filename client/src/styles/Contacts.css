@@ -1,0 +1,65 @@
+.contacts__page{
+    display: flex;
+}
+
+.all__contacts{
+    display: flex;
+    flex-direction: column;
+    flex : 6.5;
+    align-items: center;
+}
+
+.add__icon{
+    font-size : 2rem;
+}
+
+.contacts__add__btn{
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.contacts__heading{
+    width : 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.contact__form{
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    padding : 1.5rem 0;
+    margin-top : 1rem;
+    width: 100%;
+    justify-content: center;
+    border : 1px solid grey;
+}
+
+.input__container{
+    display: flex;
+    justify-content: center;
+}
+
+.input__container > input{
+    margin-right : 1rem;
+    padding : 0.5rem;
+    border-radius: 0.5rem;
+    border : 1px solid black;
+    outline : 0;
+}
+
+.input__container > button{
+    all : unset;
+    padding : 0.5rem 1rem;
+    background-color : aqua;
+    font-weight: 600;
+    border-radius: 0.2rem;
+}
+
+.error__message{
+    color : red;
+    font-weight: 600;
+}

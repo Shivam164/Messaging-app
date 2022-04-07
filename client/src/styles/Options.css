@@ -10,10 +10,12 @@
 }
 
 .btn-options {
+  all : unset;
   text-decoration: none;
   color: #000;
   font-size: 1.3rem;
   font-weight: lighter;
+  cursor: pointer;
 }
 
 /*____*/
