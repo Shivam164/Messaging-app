@@ -1,22 +1,45 @@
 import React, { useContext, useState } from 'react';
 import './styles/EmailInfo.css';
 import { useHistory } from 'react-router-dom';
-import { signInWithGoogle } from './Firebase';
-import { ProfileContext } from './Contexts/GlobalState';
+import axios from "axios";
 
-function EmailInfo() {
+function EmailInfo({ errorMessage, mailSent, setErrorMessage, setMailSent, email, setEmail }) {
 
   const history = useHistory();
-
-  const {profile, setProfile, setSignedIn} = useContext(ProfileContext);
-
   const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
 
-  const submitDetails = (e) => {
-    e.preventDefault(); 
+  const submitDetails = async() => {
+
+    const config = {
+      header: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    const BODY = {
+        name : name,
+        emailId : email,
+        password : password
+      };
+
+    try{
+
+      const response = await axios.post(
+        "/api/auth/signup",
+        BODY,
+        config
+      );
+
+      setMailSent(true);
+
+    }catch(error){
+      setErrorMessage(error.response.data.message);
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
+    }
   }
 
   // FUNCTION TO MOVE TO LOGIN PAGE 
@@ -25,15 +48,6 @@ function EmailInfo() {
     history.push('/login')
   }
 
-  const handleGoogleAuth = (e) => {
-    e.preventDefault();
-    signInWithGoogle()
-      .then(result => {
-        console.log(result);
-        setProfile(result.user);
-        setSignedIn(true);
-      }).catch(error => console.log(error));
-  }
 
   return (
     <div className='emailInfo'>
@@ -41,8 +55,7 @@ function EmailInfo() {
         <input placeholder='Enter Your Name' value = {name} onChange = {(e) => setName(e.target.value)}/>
         <input placeholder='Enter Your Email' value = {email} onChange = {e => setEmail(e.target.value)} />
         <input placeholder='Enter Your Password' type = 'password' value = {password} onChange = {e => setPassword(e.target.value)}/>
-
-
+        {errorMessage && <p className='signup__error'>{errorMessage}</p>}
         <button onClick = {submitDetails}>Sign Up</button>
         <div className='logIn'>
             <span>Already have an account?</span>
