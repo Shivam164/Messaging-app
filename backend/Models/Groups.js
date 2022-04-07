@@ -4,15 +4,20 @@ const MessageSchema = require('./Messages');
 const UserSchema = require('./User');
 
 const GroupSchema = new Schema({
-    members: {
-        type : [UserSchema],
-        required : true
+    groupName: { 
+        type: String,
+        trim: true
     },
+    users: [
+        { type: mongoose.Schema.Types.ObjectId,
+            ref: "User" 
+        }
+    ],
     isGroupChat : {
         type : Boolean,
         default : false
     },
-    groupAvatar : {
+    groupImage : {
         type : String,
         required : false,
         default : "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
@@ -22,11 +27,6 @@ const GroupSchema = new Schema({
         required : true,
         default : ""
     },
-    groupMessage : {
-        type : [MessageSchema],
-        required : false,
-        default : []
-    },
     groupLastMessage : {
         type : MessageSchema,
         required : true
@@ -35,4 +35,4 @@ const GroupSchema = new Schema({
 
 const Group = mongoose.model('Group',GroupSchema);
 
-module.exports = Group;
+module.exports = { Group, GroupSchema};

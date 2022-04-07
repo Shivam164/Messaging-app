@@ -44,14 +44,9 @@ const UserSchema = new Schema({
     image : {
         type : String,
         required : false,
-        default : 0
+        default :"https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
     },
-    activeChatsGroup: {
-        type : [String],
-        required : false,
-        default : []
-    },
-    activeChatOne : {
+    activeChatGroups: {
         type : [String],
         required : false,
         default : []

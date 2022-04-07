@@ -17,8 +17,8 @@ function Options() {
   return (
     <div className='options'>
       <div className='options__header'>
-         <img src={profile.photoURL} className='options-profile-img' align='left'></img>
-        <h2 className='heading' align='left'>{profile.displayName}</h2>
+         <img src={profile.image} className='options-profile-img' align='left'/>
+        <h2 className='heading' align='left'>{profile.name}</h2>
       </div>
 
       <div className="user__options">

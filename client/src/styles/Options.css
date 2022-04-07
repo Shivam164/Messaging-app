@@ -6,6 +6,7 @@
 .options-profile-img {
   border-radius: 50%;
   height: 3rem;
+  margin : 1rem;
 }
 
 .btn-options {
@@ -30,6 +31,7 @@
 .options__header > img {
   flex: 0.25;
   margin-bottom: 0.4rem;
+  width : 60%;
 }
 
 .options__header > h2 {

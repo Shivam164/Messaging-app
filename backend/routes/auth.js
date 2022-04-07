@@ -7,6 +7,6 @@ router.post('/signup',signup);
 
 router.put('/otpverification', otpVerification);
 
-router.get('/login', login);
+router.post('/login', login);
 
 module.exports = router;

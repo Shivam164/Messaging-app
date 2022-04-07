@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 const UserSchema = require('./User');
 
 const MessagesSchema = new Schema({
-    byWhom : {
+    sender : {
         type : UserSchema,
         required : true
     },
@@ -11,9 +11,9 @@ const MessagesSchema = new Schema({
         type : String,
         required : true
     },
-    to : {
-        type : UserSchema,
-        required : true
+    group : {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Group" 
     }
 },{timestamps : true});
 

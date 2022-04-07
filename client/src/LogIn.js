@@ -1,14 +1,52 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './styles/SignIn.css';
 import pic from './assets/signIn-img.png';
+import { ProfileContext } from './Contexts/GlobalState';
+import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 function LogIn() {
 
+const {setProfile, setSignedIn} = useContext(ProfileContext);
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
+const [errorMessage, setErrorMessage] = useState('');
+const history = useHistory();
 
-const submitDetails = (e) => {
-    e.preventDefault(); 
+
+const submitDetails = async () => {
+    const config = {
+        header: {
+          "Content-Type": "application/json",
+        },
+      };
+  
+      const BODY = {
+          emailId : email,
+          password : password
+        };
+  
+      try{
+  
+        const { data } = await axios.post(
+          "/api/auth/login",
+          BODY,
+          config
+        );
+
+        console.log(data);
+  
+        await setProfile(data.user);
+      await localStorage.setItem("authToken", data.token);
+      setSignedIn(true);
+      history.push('/');
+  
+      }catch(error){
+        setErrorMessage(error.response.data.message);
+        setTimeout(() => {
+          setErrorMessage("");
+        }, 5000);
+      }
 }
 
   return (
@@ -22,6 +60,7 @@ const submitDetails = (e) => {
                     <h1>Login to Your Account</h1>
                     <input placeholder='Enter Your Email' value = {email} onChange = {e => setEmail(e.target.value)} />
                     <input placeholder='Enter Your Password' type = 'password' value = {password} onChange = {e => setPassword(e.target.value)}/>
+                    {errorMessage && <p className='signup__error'>{errorMessage}</p>}
                     <button onClick = {submitDetails}>Log in</button>
                 </div>
             </div>

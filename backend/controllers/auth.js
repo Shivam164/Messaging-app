@@ -100,14 +100,16 @@ exports.login = async function(req, res, next){
     console.log(emailId);
     console.log(password);
     try{
-        const user = await User.findOne({emailId});
+        const user = await User.findOne({emailId}).select("+password");
         console.log(user);
         const isMatch = await user.matchPasswords(password);
         if(!isMatch){
             return next(new ErrorResponse("Invalid Credentials", 401));
         }
-        sendToken(user, 200, res);
+        const _user = await User.findOne({emailId});
+        sendToken(_user, 200, res);
     }catch(error){
+        console.log(error);
         next(error);
     }
 }
