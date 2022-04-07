@@ -1,7 +1,7 @@
 .single__contact{
     display: flex;
     justify-content: space-around;
-    width: 60%;
+    width: 100%;
     align-items: center;
     background-color: rgb(238, 238, 238);
     margin-bottom: 0.5rem;

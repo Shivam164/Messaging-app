@@ -2,6 +2,16 @@
     display: flex;
 }
 
+.contacts__page > *{
+    margin: 5px;
+    margin-top: 2rem;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+    height: 94vh;
+    max-height: 90vh;
+}
+
 .all__contacts{
     display: flex;
     flex-direction: column;
@@ -62,4 +72,16 @@
 .error__message{
     color : red;
     font-weight: 600;
+}
+
+.contacts__list::-webkit-scrollbar {
+    display: none;
+  }
+
+.contacts__list{
+    width : 60%;
+    height: 100%;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

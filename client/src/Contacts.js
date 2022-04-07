@@ -33,16 +33,17 @@ function Contacts() {
                 }
             </div>
             
-
-            <SingleContact/>
-            <SingleContact/>
-            <SingleContact/>
-            <SingleContact/>
-            <SingleContact/>
-            <SingleContact/>
-            <SingleContact/>
-            <SingleContact/>
-
+            <div className='contacts__list'>
+              <SingleContact/>
+              <SingleContact/>
+              <SingleContact/>
+              <SingleContact/>
+              <SingleContact/>
+              <SingleContact/>
+              <SingleContact/>
+              <SingleContact/>
+            </div>
+          
         </div>
         <ChatInfo/>
     </div>
