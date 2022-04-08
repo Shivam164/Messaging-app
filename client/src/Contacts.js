@@ -12,8 +12,9 @@ function Contacts() {
 
   const [errorMsg,setErrorMsg] = useState("");
   const {profile} = useContext(ProfileContext);
-  const [SearchedUser, setSearcheduser] = useState({});
+  const [SearchedUser, setSearchedUser] = useState({});
   const [emailId, setEmailId] = useState("");
+  const [showUser, setShowUser] = useState(false);
 
   const handleSearch = async (e) => {
     e.preventDefault();
@@ -37,7 +38,8 @@ function Contacts() {
 
       console.log(data);
 
-      setSearcheduser(data.user);
+      setSearchedUser(data);
+      setShowUser(true);
 
     }catch(error){
       console.log(error.response);
@@ -62,21 +64,23 @@ function Contacts() {
                 {errorMsg && <p className='error__message'>{errorMsg}</p>}
             </div>
 
-          <AddContact/>
+          {showUser && SearchedUser && 
+          <AddContact 
+            name = {SearchedUser.name}
+            image = {SearchedUser.image}
+            emailId = {SearchedUser.emailId} 
+            _id = {SearchedUser._id} 
+            setShowUser = {setShowUser} 
+            setSearchedUser = {setSearchedUser}
+            setErrorMsg = {setErrorMsg}
+          />}
 
             <div className='contacts__list'>
               {!profile.allContacts && <p>No Contacts to show</p>}
               {profile.allContacts && profile.allContacts.map((contact) => (
                 <SingleContact name = {contact.name} image = {contact.image} /> 
               ))}
-              <SingleContact/>
-              <SingleContact/>
-              <SingleContact/>
-              <SingleContact/>
-              <SingleContact/>
-              <SingleContact/>
-              <SingleContact/>
-              <SingleContact/>
+              
             </div> 
         </div>
         <ChatInfo/>

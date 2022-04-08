@@ -1,10 +1,15 @@
+.addContact__outer{
+    background-color:  rgb(0, 202, 202);
+}
+
 .addContact{
     display: flex;
     align-items: center;
-    width: 50%;
-    justify-content: center;
+    width: 40%;
+    justify-content: space-around;
     background-color: rgb(0, 202, 202);
     margin-bottom: 2rem;
+    padding : 0.5rem
 }
 
 .addContact__info{
@@ -23,4 +28,8 @@
 
 .addContact__info > p{
     font-weight: 600;
+}
+
+.addContact__btn{
+    all : unset;
 }
