@@ -36,8 +36,6 @@ function Contacts() {
         config
       );
 
-      console.log(data);
-
       setSearchedUser(data);
       setShowUser(true);
 
@@ -78,7 +76,12 @@ function Contacts() {
             <div className='contacts__list'>
               {!profile.allContacts && <p>No Contacts to show</p>}
               {profile.allContacts && profile.allContacts.map((contact) => (
-                <SingleContact name = {contact.name} image = {contact.image} /> 
+                <SingleContact 
+                name = {contact.name} 
+                image = {contact.image} 
+                email = {contact.email}
+                setErrorMsg = {setErrorMsg}
+                /> 
               ))}
               
             </div> 

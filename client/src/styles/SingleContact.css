@@ -35,5 +35,9 @@
   }
 
   .contacts__icons > *{
+      all : unset;
+      cursor: pointer;
       margin-left : 1rem;
   }
+
+  

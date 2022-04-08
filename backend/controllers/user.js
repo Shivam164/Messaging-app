@@ -54,3 +54,20 @@ exports.addContact = async function(req, res, next){
         next(error);
     }
 }
+
+exports.removeContact = async function(req, res, next){
+    const {emailId, userEmailId} = req.body;
+    try{
+        const user = await User.findOne({emailId : userEmailId});
+        const contacts = user.allContacts.filter((contact) => {
+            return contact.email !== emailId;
+        })
+
+        user.allContacts = contacts;
+        await user.save();
+        res.status(200).json({message : "Removed Contact from contacts", user});
+    }catch(error){
+        console.log(error);
+        next(error);
+    }
+}

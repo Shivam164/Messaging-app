@@ -31,8 +31,6 @@ export const AddContact = ({ name, image, emailId, _id, setSearchedUser, setShow
         BODY,
         config
       );
-
-      console.log(data);
       await setProfile(data.user);
       await setShowUser(false);
       await setSearchedUser({});
