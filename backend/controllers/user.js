@@ -3,7 +3,7 @@ const { User } = require('../Models/User');
 exports.findContact = async function(req, res, next){
     const { emailId } = req.body;
 
-    console.log(emailId);
+    console.log(req.body);
 
     try{
         const user = await User.findOne({emailId});

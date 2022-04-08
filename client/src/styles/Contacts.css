@@ -56,8 +56,6 @@
 .input__container > input{
     margin-right : 1rem;
     padding : 0.5rem;
-    border-radius: 0.5rem;
-    border : 1px solid black;
     outline : 0;
 }
 
@@ -67,6 +65,7 @@
     background-color : aqua;
     font-weight: 600;
     border-radius: 0.2rem;
+    cursor: pointer;
 }
 
 .error__message{

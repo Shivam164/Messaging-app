@@ -2,11 +2,13 @@ import React, { useContext, useState } from 'react'
 import './styles/PhoneNumberInfo.css';
 import axios from 'axios';
 import { ProfileContext } from './Contexts/GlobalState';
+import { useHistory } from 'react-router-dom';
 
 const OTPverify = ({ mailSent, errorMessage, email, setErrorMessage }) => {
 
   const {profile, setProfile, setSignedIn} = useContext(ProfileContext);
   const [otp, setOtp] = useState("");
+  const history = useHistory();
 
   const handleVerify = async () => {
     const config = {
@@ -27,9 +29,11 @@ const OTPverify = ({ mailSent, errorMessage, email, setErrorMessage }) => {
         BODY,
         config
       );
+      console.log(data.user);
       await setProfile(data.user);
       await localStorage.setItem("authToken", data.token);
       setSignedIn(true);
+      history.push('/');
 
     }catch(error){
       setErrorMessage(error.response.data.message);

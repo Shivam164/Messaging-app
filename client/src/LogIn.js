@@ -37,7 +37,10 @@ const submitDetails = async () => {
         console.log(data);
   
         await setProfile(data.user);
+        console.log("token => ", localStorage.getItem("authToken"));
+        console.log("received token => ", data.token);
       await localStorage.setItem("authToken", data.token);
+      console.log("token => ", localStorage.getItem("authToken"));
       setSignedIn(true);
       history.push('/');
   
