@@ -71,6 +71,7 @@
 .error__message{
     color : red;
     font-weight: 600;
+    margin-bottom: 0;
 }
 
 .contacts__list::-webkit-scrollbar {

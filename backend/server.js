@@ -18,6 +18,7 @@ app.use(express.json());
 // MIDDLEWARE FOR ROUTES
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/user', require('./routes/user'));
+app.use('/api/chat', require('./routes/chat'));
 
 // THIS MIDDLEWARE WILL TAKE CARE OF ALL THE ERROS
 app.use(errorHandler);

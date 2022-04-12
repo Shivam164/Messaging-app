@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ProfileContext } from './Contexts/GlobalState';
 import './styles/Person.css';
 
 function Person({ selected }) {
+
+  const {selectedChat, setSelectedChat} = useContext(ProfileContext);
+
   return (
-    <div className={`person ${selected == true? ' selected':' not-selected'}`}>
+    <div className={`person ${selectedChat? ' selected':' not-selected'}`}>
         <div className="person__image">
             <img src = "https://userpic.codeforces.org/2018443/title/38fb16c17026a84c.jpg" />
         </div>

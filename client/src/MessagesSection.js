@@ -1,11 +1,41 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import './styles/MessagesSection.css';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import SendIcon from '@mui/icons-material/Send';
 import SingleMsg from './SingleMsg';
-
+import axios from 'axios';
+import { ProfileContext } from './Contexts/GlobalState';
 
 function MessagesSection() {
+
+  const {selectedChat, setSelectedChat} = useContext(ProfileContext);
+  const [loading, setLoading] = useState(false);
+  const [messages, setMessages] = useState("");
+
+  const fetchMessages = async () => {
+    if (!selectedChat) return;
+
+    try {
+      const config = {
+        headers: {
+          "Content-type": "application/json"
+        },
+      };
+
+      setLoading(true);
+
+      const { data } = await axios.get(
+        `/api/message/${selectedChat._id}`,
+        config
+      );
+      setMessages(data);
+      setLoading(false);
+
+    } catch (error) {
+      
+    }
+  };
+
   return (
     <div className='msgSection'>
 

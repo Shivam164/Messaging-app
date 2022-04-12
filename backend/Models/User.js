@@ -79,7 +79,7 @@ const UserSchema = new Schema({
     registerOTPExpires : {
         type : Date
     }
-},{collection : 'User'});
+},{collection : 'User'},{timestamp : true});
 
 
 UserSchema.pre("save", async function(next){
