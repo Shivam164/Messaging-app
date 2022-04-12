@@ -80,6 +80,7 @@ function Contacts() {
                 name = {contact.name} 
                 image = {contact.image} 
                 email = {contact.email}
+                _id = {contact._id}
                 setErrorMsg = {setErrorMsg}
                 /> 
               ))}
