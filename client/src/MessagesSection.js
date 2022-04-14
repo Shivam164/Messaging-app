@@ -5,6 +5,9 @@ import SendIcon from '@mui/icons-material/Send';
 import SingleMsg from './SingleMsg';
 import axios from 'axios';
 import { ProfileContext } from './Contexts/GlobalState';
+import io from 'socket.io-client';
+var socket;
+const ENDPOINT = "http://localhost:5000";
 
 function MessagesSection() {
 
@@ -12,6 +15,14 @@ function MessagesSection() {
   const [loading, setLoading] = useState(false);
   const [messages, setMessages] = useState([]);
   const [text, setText] = useState("");
+
+  const [socketConnected, setSocketConnected] = useState(false);
+
+  useEffect(() => {
+    socket = io(ENDPOINT);
+    socket.emit("setup", profile);
+    socket.on("connection", () => setSocketConnected(true));
+  },[]);
 
   const fetchMessages = async () => {
     if (!selectedChat) return;
@@ -37,14 +48,25 @@ function MessagesSection() {
       setMessages(data);
       console.log(data);
       setLoading(false);
-
+      socket.emit("join chat", selectedChat._id);
     } catch (error) {
       
     }
   };
 
+  useEffect(() => {
+    socket.on('message received',(newMessageReceived) => {
+      if(!selectedChat || selectedChat._id !== newMessageReceived.group._id){
+        // show notification
+      }else{
+        setMessages([...messages, newMessageReceived]);
+      }
+    })
+  })
+
   const sendMessages = async (e) => {
     e.preventDefault();
+    setText("");
     const config = {
       headers : {
         "Content-Type" : "application/json"
@@ -67,7 +89,9 @@ function MessagesSection() {
         config
       );
 
-      setText("");
+      console.log(data);
+      socket.emit("new message", data);
+      setMessages([...messages, data]);
 
     }catch(error){
       console.log(error);

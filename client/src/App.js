@@ -6,7 +6,7 @@ import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import ChatInfo from './ChatInfo';
 import SignIn from './SignIn';
 import LogIn from './LogIn';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { ProfileContext } from './Contexts/GlobalState';
 import PrivateRoute from './routing/PrivateRoute';
 import Contacts from './Contacts';

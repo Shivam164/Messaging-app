@@ -7,6 +7,7 @@ function SingleMsg({ message }) {
   const {profile} = useContext(ProfileContext);
 
   return (
+    <div className={`${profile._id == message.sender._id? 'right__singleMsg__container' : 'left__singleMsg__container'}`}>
     <div className={`${profile._id == message.sender._id? 'right__singleMsg' : 'left__singleMsg'}`}>
 
         <div className="author__image">
@@ -21,6 +22,7 @@ function SingleMsg({ message }) {
             </div>
         </div>
 
+    </div>
     </div>
   )
 }

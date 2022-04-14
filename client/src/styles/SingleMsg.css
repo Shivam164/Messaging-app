@@ -1,7 +1,20 @@
 .right__singleMsg {
+  position: relative;
+  right : 0;
   display: flex;
   flex-direction: row-reverse;
   margin: 1rem 1rem;
+  max-width: 40%;
+}
+
+.right__singleMsg__container{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.left__singleMsg__container{
+  display: flex;
+  justify-content: flex-start;
 }
 
 .left__singleMsg {
