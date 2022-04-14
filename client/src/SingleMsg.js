@@ -1,19 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ProfileContext } from './Contexts/GlobalState';
 import './styles/SingleMsg.css';
 
-function SingleMsg({ own }) {
+function SingleMsg({ message }) {
+
+  const {profile} = useContext(ProfileContext);
+
   return (
-    <div className={`${own == true? 'right__singleMsg' : 'left__singleMsg'}`}>
+    <div className={`${profile._id == message.sender._id? 'right__singleMsg' : 'left__singleMsg'}`}>
 
         <div className="author__image">
-            <img src = "https://userpic.codeforces.org/2018443/title/38fb16c17026a84c.jpg" />
+            <img src = {message.sender.image}/>
         </div>
 
         <div className="msg__mainInfo">
-            <small className={`${own == true? 'right' : 'left'}`}>Shivam</small>
+            <small className={`${profile._id == message.sender._id? 'right' : 'left'}`}>{message.sender.name}</small>
             <div className="text__info">
-                <p>hello How are you doing</p>
-                <small className={`${own == true ? 'left__time' : 'right__time'}`}>7:35 PM</small>
+                <p>{message.text}</p>
+                <small className={`${profile._id == message.sender._id? 'left__time' : 'right__time'}`}>7:35 PM</small>
             </div>
         </div>
 

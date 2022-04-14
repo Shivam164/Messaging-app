@@ -2,18 +2,27 @@ import React, { useContext } from 'react';
 import { ProfileContext } from './Contexts/GlobalState';
 import './styles/Person.css';
 
-function Person({ selected }) {
+function Person({ name, image, isGroup, chat }) {
 
   const {selectedChat, setSelectedChat} = useContext(ProfileContext);
 
+  const handleClick = () => {
+    setSelectedChat(chat)
+  }
+
+  const findSelectedOrNot = () => {
+    if(!selectedChat || selectedChat._id !== chat._id)return false;
+    return true;
+  }
+
   return (
-    <div className={`person ${selectedChat? ' selected':' not-selected'}`}>
+    <div className={`person ${findSelectedOrNot()? ' selected':' not-selected'}`} onClick = {handleClick}>
         <div className="person__image">
-            <img src = "https://userpic.codeforces.org/2018443/title/38fb16c17026a84c.jpg" />
+            <img src = {image} />
         </div>
         <div className="personchat__info">
            <div className='person__name'>
-                <p>Shivam</p>
+                <p>{name}</p>
                 <small>7:35 PM</small>
            </div>
            <div className='person__chat'>

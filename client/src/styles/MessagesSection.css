@@ -57,16 +57,18 @@
 .messageInput {
   padding: 0.5rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  background-color: rgb(239, 237, 237);
+  border-top : 3px solid rgb(225, 223, 223);
 }
 
 .messageInput > input {
   padding: 0.5rem 1rem;
   outline: 0;
   border: 1px solid gray;
-  border-radius: 10px;
-  margin-bottom: 1rem;
+  border-radius: 5px;
+  /* margin-bottom: 1rem; */
   background-color: rgb(238, 238, 238);
   width: 90%;
 }
@@ -75,5 +77,5 @@
   all: unset;
   padding: 0.1rem 0.5rem;
   border-radius: 0.8rem;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }

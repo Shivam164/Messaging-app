@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './styles/MessagesSection.css';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import SendIcon from '@mui/icons-material/Send';
@@ -10,7 +10,8 @@ function MessagesSection() {
 
   const {selectedChat, setSelectedChat, profile} = useContext(ProfileContext);
   const [loading, setLoading] = useState(false);
-  const [messages, setMessages] = useState("");
+  const [messages, setMessages] = useState([]);
+  const [text, setText] = useState("");
 
   const fetchMessages = async () => {
     if (!selectedChat) return;
@@ -22,13 +23,19 @@ function MessagesSection() {
         },
       };
 
+      const BODY = {
+        groupId : selectedChat._id
+      }
+
       setLoading(true);
 
-      const { data } = await axios.get(
-        `/api/chat/${selectedChat._id}`,
+      const { data } = await axios.post(
+        '/api/chat/allMessages',
+        BODY,
         config
       );
       setMessages(data);
+      console.log(data);
       setLoading(false);
 
     } catch (error) {
@@ -36,17 +43,46 @@ function MessagesSection() {
     }
   };
 
-  // useEffect(() => {
-  //   fetchMessages();
-  // }, [selectedChat]);
+  const sendMessages = async (e) => {
+    e.preventDefault();
+    const config = {
+      headers : {
+        "Content-Type" : "application/json"
+      }
+    };
+
+    const BODY = {
+      groupId : selectedChat._id,
+      text : text,
+      chatId : selectedChat._id,
+      user : {
+        _id : profile._id
+      }
+    }
+
+    try{
+      const { data } = await axios.post(
+        '/api/chat/sendMessages',
+        BODY,
+        config
+      );
+
+      setText("");
+
+    }catch(error){
+      console.log(error);
+      alert(error.response.data.message);
+    }
+
+
+  }
+
+  useEffect(() => {
+    fetchMessages();
+  }, [selectedChat]);
 
   const OtherUser = () => {
     const allUsers = selectedChat.users;
-    console.log({
-      name : allUsers[((allUsers[0]._id === profile._id)? 1 : 0)].name,
-      email : allUsers[((allUsers[0]._id === profile._id)? 1 : 0)].emailId,
-      image : allUsers[((allUsers[0]._id === profile._id)? 1 : 0)].image
-    });
     return {
       name : allUsers[((allUsers[0]._id === profile._id)? 1 : 0)].name,
       email : allUsers[((allUsers[0]._id === profile._id)? 1 : 0)].emailId,
@@ -76,25 +112,21 @@ function MessagesSection() {
 
         {/* ALL MESSAGES  */}
         <div className='allMessages'>
-          <SingleMsg own = {false}/>
-          <SingleMsg own = {true} />
-          <SingleMsg own = {true} />
-          <SingleMsg own = {true} />
-          <SingleMsg own = {false}/>
-          <SingleMsg own = {false}/>
-          <SingleMsg own = {false}/>
-          <SingleMsg own = {false}/>
-          <SingleMsg own = {false}/>
-
+          {loading && <p>Messages are loading ...</p>}
+          {!loading && messages &&
+            messages.map(message => (
+              <SingleMsg message = {message} key = {message._id}/>
+            ))
+          }
         </div>
 
         {/* MESSAGE INPUT  */}
-        <div className="messageInput">
-          <input/>
-          <button>
-          <SendIcon/>
+        <form className="messageInput" onSubmit={sendMessages}>
+          <input value = {text} onChange={e => setText(e.target.value)}/>
+          <button onClick={sendMessages}>
+            <SendIcon/>
           </button>
-        </div>
+        </form>
       </> }
       {!selectedChat && <p>Not selected anything</p>}
     </div>

@@ -7,10 +7,6 @@ import './styles/Home.css';
 
 function Home() {
 
-    useEffect(() => {
-        console.log("inside homepage");
-    })
-
   return (
     <div className='home'>
         <Options/>

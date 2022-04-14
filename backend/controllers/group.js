@@ -1,7 +1,7 @@
 const { Group } = require('../Models/Groups.js');
 const { User } = require('../Models/User');
 
-exports.accessGroup = async (req, res) => {
+exports.accessGroup = async (req, res, next) => {
     const { userId } = req.body;
     console.log(req.body.user);
   
@@ -24,6 +24,8 @@ exports.accessGroup = async (req, res) => {
       path: "latestMessage.sender",
       select: "name pic email",
     });
+
+    console.log(isGroup);
   
     if (isGroup.length > 0) {
       res.send(isGroup[0]);
@@ -43,12 +45,14 @@ exports.accessGroup = async (req, res) => {
         res.status(200).json(FullChat);
       } catch (error) {
         res.status(400);
-        throw new Error(error.message);
+        next(error);
       }
     }
   };
 
-exports.fetchChats = async (req, res) => {
+exports.fetchChats = async (req, res, next) => {
+  console.log("in here");
+  console.log(req.body);
 try {
     Group.find({ users: { $elemMatch: { $eq: req.body.user._id } } })
     .populate("users", "-password")
@@ -63,7 +67,8 @@ try {
         res.status(200).send(results);
     });
 } catch (error) {
+  console.log("error ====> ", error);
     res.status(400);
-    throw new Error(error.message);
+    next(error);
 }
 };

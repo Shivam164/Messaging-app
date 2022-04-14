@@ -7,6 +7,7 @@
   padding-top: 0.6rem;
   padding-bottom: 0.6rem;
   align-items: center;
+  cursor: pointer;
 }
 
 .selected {
@@ -14,8 +15,8 @@
 }
 
 .person__image > img {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   margin-right: 0.5rem;
 }

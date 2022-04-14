@@ -5,11 +5,6 @@ import { ProfileContext } from "../Contexts/GlobalState";
 const PrivateRoute = ({ component: Component, ...rest }) => {
 
   const {signedIn} = useContext(ProfileContext);
-
-  useEffect(() => {
-    console.log("inside private route");
-  })
-
   return (
     <Route
       {...rest}
