@@ -6,15 +6,16 @@ import SingleMsg from './SingleMsg';
 import axios from 'axios';
 import { ProfileContext } from './Contexts/GlobalState';
 import io from 'socket.io-client';
-var socket;
+var socket, selectedChatCompare;
 const ENDPOINT = "http://localhost:5000";
 
 function MessagesSection() {
 
-  const {selectedChat, setSelectedChat, profile} = useContext(ProfileContext);
+  const {selectedChat, profile, setNewMessage} = useContext(ProfileContext);
   const [loading, setLoading] = useState(false);
   const [messages, setMessages] = useState([]);
   const [text, setText] = useState("");
+
 
   const [socketConnected, setSocketConnected] = useState(false);
 
@@ -23,6 +24,11 @@ function MessagesSection() {
     socket.emit("setup", profile);
     socket.on("connection", () => setSocketConnected(true));
   },[]);
+
+  useEffect(() => {
+    console.log("Selected chat => ", selectedChat);
+    console.log("selected chat got changed");
+  },[selectedChat]);
 
   const fetchMessages = async () => {
     if (!selectedChat) return;
@@ -55,11 +61,16 @@ function MessagesSection() {
   };
 
   useEffect(() => {
-    socket.on('message received',(newMessageReceived) => {
-      if(!selectedChat || selectedChat._id !== newMessageReceived.group._id){
-        // show notification
+    socket.on('message received',async (newMessageReceived) => {
+      await setNewMessage(newMessageReceived);
+      if(!selectedChatCompare || selectedChatCompare._id !== newMessageReceived.group._id){
+        // return;
+        // console.log("Not the same selected chat");
       }else{
-        setMessages([...messages, newMessageReceived]);
+        // console.log("selectedChat => ", selectedChat);
+        // console.log("new Message group => ",newMessageReceived.group );
+        // console.log(selectedChat._id === newMessageReceived.group._id);
+        await setMessages([...messages, newMessageReceived]);
       }
     })
   })
@@ -90,6 +101,7 @@ function MessagesSection() {
       );
 
       console.log(data);
+      setNewMessage(data);
       socket.emit("new message", data);
       setMessages([...messages, data]);
 
@@ -97,12 +109,11 @@ function MessagesSection() {
       console.log(error);
       alert(error.response.data.message);
     }
-
-
   }
 
   useEffect(() => {
     fetchMessages();
+    selectedChatCompare = selectedChat;
   }, [selectedChat]);
 
   const OtherUser = () => {

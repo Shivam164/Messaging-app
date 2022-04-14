@@ -1,17 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap");
 .person {
   display: flex;
-  margin: 0 0.2rem;
-  border-radius: 6px;
-  padding: 0.5 0.5rem;
-  padding-top: 0.6rem;
-  padding-bottom: 0.6rem;
+  /* margin: 0 0.2rem; */
+  /* border-radius: 6px; */
+  padding: 1rem 0.5rem;
   align-items: center;
   cursor: pointer;
 }
 
+.person:hover{
+  background-color: rgb(247, 245, 245);
+}
+
 .selected {
   background-color: rgb(238, 238, 238);
+  border-left : 4px solid #9140ed;
 }
 
 .person__image > img {
@@ -48,6 +51,7 @@
 .person__chat > p {
   padding: 0;
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  color : rgb(116, 113, 113);
   text-align: left;
 }

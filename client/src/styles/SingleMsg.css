@@ -20,6 +20,9 @@
 .left__singleMsg {
   display: flex;
   margin: 1rem 1rem;
+  position: relative;
+  left : 0;
+  max-width: 40%;
 }
 
 .author__image > img {
@@ -50,9 +53,22 @@
 .text__info {
   display: flex;
   flex-direction: column;
-  background-color: aqua;
-  padding: 0.5rem;
+  background-color: #9140ed;
+  padding: 0.8rem 0.6rem;
+  color : white;
+  font-weight: 400;
   margin-left: 0.3rem;
+  border-radius: 0.6rem;
+  /* TO BREAK THE MESSAGE IN DIFFERENT LINE IF IT IS TOO BIG    */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 .text__info > * {
@@ -64,6 +80,7 @@
   font-size: 0.8rem;
   width: 100%;
   text-align: left;
+  font-weight: 400;
 }
 
 .right__time {
@@ -71,4 +88,5 @@
   font-size: 0.8rem;
   width: 100%;
   text-align: right;
+  font-weight: 400;
 }

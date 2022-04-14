@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { ProfileContext } from './Contexts/GlobalState';
 import './styles/SingleMsg.css';
 
 function SingleMsg({ message }) {
 
   const {profile} = useContext(ProfileContext);
-
+  
   return (
     <div className={`${profile._id == message.sender._id? 'right__singleMsg__container' : 'left__singleMsg__container'}`}>
     <div className={`${profile._id == message.sender._id? 'right__singleMsg' : 'left__singleMsg'}`}>
