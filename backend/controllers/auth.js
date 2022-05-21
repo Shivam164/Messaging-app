@@ -76,6 +76,7 @@ exports.signup = async function(req, res, next){
 }
 
 exports.otpVerification = async function(req, res, next){
+    console.log("HERE");
     const { otp, emailId } = req.body;
     const user = await User.findOne({emailId});
     console.log("otp => ",otp);
@@ -84,7 +85,8 @@ exports.otpVerification = async function(req, res, next){
     if(user.registerOTP == otp){
         const _user = await User.findOne({emailId, registerOTPExpires : {$gt : Date.now()} });
         if(!_user){
-            return next(new ErrorResponse("OTP is expired",410));
+            console.log("here\n");
+            return next(new ErrorResponse("OTP has expired",410));
         }else{
             _user.verified = true;
             _user.save();

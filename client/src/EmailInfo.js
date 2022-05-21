@@ -3,14 +3,21 @@ import './styles/EmailInfo.css';
 import { useHistory } from 'react-router-dom';
 import axios from "axios";
 
-function EmailInfo({ errorMessage, mailSent, setErrorMessage, setMailSent, email, setEmail }) {
+function EmailInfo({ errorMessage, mailSent, setErrorMessage, setMailSent, email, setEmail, password, setPassword, name, setName }) {
 
   const history = useHistory();
-  const [name, setName] = useState('');
-  const [password, setPassword] = useState('');
 
+  const submitDetails = async(e) => {
+    e.preventDefault();
 
-  const submitDetails = async() => {
+    if(name == "" || email == "" || password == ""){
+      setErrorMessage("You need to fill all the details first");
+      setTimeout(() => {
+        setErrorMessage("");
+      },5000);
+      
+      return;
+    }
 
     const config = {
       header: {
@@ -52,11 +59,14 @@ function EmailInfo({ errorMessage, mailSent, setErrorMessage, setMailSent, email
   return (
     <div className='emailInfo'>
         <h1>Get Started with Sign Up</h1>
-        <input placeholder='Enter Your Name' value = {name} onChange = {(e) => setName(e.target.value)}/>
-        <input placeholder='Enter Your Email' value = {email} onChange = {e => setEmail(e.target.value)} />
-        <input placeholder='Enter Your Password' type = 'password' value = {password} onChange = {e => setPassword(e.target.value)}/>
+        <form className='signIn__form'>
+          <input placeholder='Enter Your Name' value = {name} onChange = {(e) => setName(e.target.value)}/>
+          <input placeholder='Enter Your Email' value = {email} onChange = {e => setEmail(e.target.value)} />
+          <input placeholder='Enter Your Password' type = 'password' value = {password} onChange = {e => setPassword(e.target.value)}/>
+          <button onClick = {submitDetails}>Sign Up</button>
+        </form>
         {errorMessage && <p className='signup__error'>{errorMessage}</p>}
-        <button onClick = {submitDetails}>Sign Up</button>
+        {mailSent && <p className='mail__sent'>Mail Sent, Verify Your Email</p>}
         <div className='logIn'>
             <span>Already have an account?</span>
             <button onClick={moveToLoginPage}>Log in</button>

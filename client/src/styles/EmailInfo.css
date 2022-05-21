@@ -7,20 +7,30 @@
   /* margin-top: 5rem; */
 }
 
-.emailInfo > * {
+.signIn__form > * {
   margin-bottom: 1rem;
   padding: 0.5rem;
 }
 
-.emailInfo > input {
+.signIn__form{
+  display: flex;
+  flex-direction: column;
+}
+
+.signIn__form > input {
   outline: 0;
 }
 
-.emailInfo > button {
+.signIn__form > button {
   border: 0;
   background-color: rgb(69, 52, 228);
   color: white;
   cursor: pointer;
+}
+
+.logIn{
+  display: flex;
+  justify-content : center;
 }
 
 .logIn > button {
@@ -34,4 +44,13 @@
 .signup__error{
   color : red;
   margin : 0;
+  max-width: 20rem;
+  text-align: center;
+}
+
+.mail__sent{
+  color : white;
+  background-color: rgb(74, 220, 74);
+  text-align: center;
+  padding : 0.5rem 0;
 }

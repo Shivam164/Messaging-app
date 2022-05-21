@@ -9,7 +9,9 @@ function SignIn() {
 
   const [mailSent, setMailSent] = useState(false);  
   const [errorMessage, setErrorMessage] = useState(""); 
+  const [name, setName] = useState('');
   const [email, setEmail] = useState(''); 
+  const [password, setPassword] = useState('');
 
   return (
     <div className='outerBox'>
@@ -19,8 +21,31 @@ function SignIn() {
             </div>
             <div className='info'>
                 <Carousel className='slider'>
-                    <EmailInfo mailSent={mailSent} errorMessage={errorMessage} setMailSent={setMailSent} setErrorMessage = {setErrorMessage} email = {email} setEmail = {setEmail}/>
-                    <OTPverify mailSent={mailSent} errorMessage={errorMessage} setMailSent={setMailSent} setErrorMessage = {setErrorMessage} email = {email} setEmail = {setEmail}/>
+                    <EmailInfo 
+                        mailSent={mailSent} 
+                        errorMessage={errorMessage} 
+                        setMailSent={setMailSent} 
+                        setErrorMessage = {setErrorMessage} 
+                        email = {email} 
+                        setEmail = {setEmail} 
+                        password = {password} 
+                        setPassword = {setPassword}
+                        name = {name}
+                        setName = {setName}
+                        />
+                        
+                    <OTPverify 
+                        mailSent={mailSent} 
+                        errorMessage={errorMessage} 
+                        setMailSent={setMailSent} 
+                        setErrorMessage = {setErrorMessage} 
+                        email = {email} 
+                        setEmail = {setEmail} 
+                        password = {password} 
+                        setPassword = {setPassword}
+                        name = {name}
+                        setName = {setName}
+                        />
                 </Carousel>
             </div>
         </div>
