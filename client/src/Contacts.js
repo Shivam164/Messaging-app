@@ -52,16 +52,19 @@ function Contacts() {
   return (
     <div className='contacts__page'>
         <Options/>
+        
         <div className='all__contacts'>
+          
             <div className='contacts__heading'>
-                <h1>Contacts</h1>  
+                <h1>Contacts</h1> 
+                <form> 
                 <div className='input__container'>
                   <input type = "email" placeholder='Enter Email' value = {emailId} onChange = {e => setEmailId(e.target.value)} />
                   <button onClick={handleSearch}>Search</button>
                 </div>
+                </form>
                 {errorMsg && <p className='error__message'>{errorMsg}</p>}
             </div>
-
           {showUser && SearchedUser && 
           <AddContact 
             name = {SearchedUser.name}
