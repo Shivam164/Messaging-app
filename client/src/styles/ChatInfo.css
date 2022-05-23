@@ -5,6 +5,10 @@
   border-radius: 50%;
   height: 8.0rem;
 }
+.default-img{
+  border-radius: 50%;
+  height: 16.0rem;
+}
 .Info-flex {
   display: flex;
   flex-direction: column;
