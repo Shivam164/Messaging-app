@@ -34,22 +34,29 @@ exports.addContact = async function(req, res, next){
             return (singleUser.email == emailId);
         })
 
+        console.log("found One");
         console.log(result);
 
         if(result.length !== 0){
+            console.log("inside if statement");
             next(new ErrorResponse("Already in contacts", 403));
+            // res.status(403).json({message : "Already in contacts", user})
+        }else{
+            console.log("reached here");
+
+            user.allContacts.unshift({
+                _id : _id,
+                name : name,
+                email : emailId,
+                image : image
+            });
+
+            await user.save();
+
+            res.status(200).json({message : "Added to the contacts", user})
         }
 
-        user.allContacts.unshift({
-            _id : _id,
-            name : name,
-            email : emailId,
-            image : image
-        });
-
-        await user.save();
-
-        res.status(200).json({message : "Added to the contacts", user})
+        
     }catch(error){
         next(error);
     }
