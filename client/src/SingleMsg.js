@@ -18,7 +18,7 @@ function SingleMsg({ message }) {
             <small className={`${profile._id == message.sender._id? 'right' : 'left'}`}>{message.sender.name}</small>
             <div className="text__info">
                 <p>{message.text}</p>
-                <small className={`${profile._id == message.sender._id? 'left__time' : 'right__time'}`}>7:35 PM</small>
+                <small className={`${profile._id == message.sender._id? 'left__time' : 'right__time'}`}>{new Date(message.createdAt).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})}</small>
             </div>
         </div>
 

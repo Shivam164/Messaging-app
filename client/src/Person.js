@@ -7,6 +7,7 @@ function Person({ name, image, isGroup, chat }) {
   const {selectedChat, setSelectedChat, newMessage} = useContext(ProfileContext);
 
   const [latestMsg, setlatestMsg] = useState("");
+  const [lastesMsgTime, setlatestMsgTime] = useState("");
 
   const makeItShort = (str) => {
     if(str.length < 25)return str;
@@ -20,12 +21,15 @@ function Person({ name, image, isGroup, chat }) {
       console.log(chat);
       if(chat && chat.latestMessage){
         setlatestMsg(makeItShort(chat.latestMessage.text));
+        setlatestMsgTime(new Date(chat.latestMessage.createdAt).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'}));
       }
       return;
     }else{
       if(newMessage.group._id === chat._id){
         console.log("I am here");
         setlatestMsg(makeItShort(newMessage.text));
+        // console.log(typeof(new Date(newMessage.createdAt).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})));
+        setlatestMsgTime(new Date(newMessage.createdAt).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'}));
       }
     }
   },[newMessage]);
@@ -47,7 +51,7 @@ function Person({ name, image, isGroup, chat }) {
         <div className="personchat__info">
            <div className='person__name'>
                 <p>{name}</p>
-                <small>7:35 PM</small>
+                <small>{lastesMsgTime}</small>
            </div>
            <div className='person__chat'>
                 {latestMsg && <p>{latestMsg}</p>}
