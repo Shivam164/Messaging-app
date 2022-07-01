@@ -4,9 +4,15 @@
   font-family: "Source Sans Pro", sans-serif;
   display: flex;
   flex-direction: column;
+  margin-top : 2rem;
 }
 
-.wrapper > * {
+.otp__form{
+  display: flex;
+  flex-direction: column;
+}
+
+.otp__form > * {
   margin-bottom: 1rem;
   padding: 0.5rem;
 }
@@ -14,9 +20,26 @@
 .sub-text {
   color: #424242;
   font-size: 15px;
+  text-align: center;
 }
 
-.wrapper > input {
+.sub-text-error {
+  color: white;
+  background-color: rgb(231, 87, 87);
+  padding : 0.5rem 0;
+  font-size: 15px;
+  text-align: center;
+}
+
+.sub-text-success {
+  background-color: rgb(74, 220, 74);
+  padding : 0.5rem 0;
+  color: white;
+  font-size: 15px;
+  text-align: center;
+}
+
+.otp__form > input {
   outline: 0;
 }
 

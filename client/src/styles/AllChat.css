@@ -5,13 +5,6 @@
   border: 2px solid lightgray;
   flex: 2;
   font-family: "Source Sans Pro", sans-serif;
-  overflow: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.allChat::-webkit-scrollbar {
-  display: none;
 }
 
 .allChat__header {
@@ -45,6 +38,15 @@
   padding-left: 0.5rem;
 }
 
-.allPerson {
-  margin-top: 0.6rem;
+.allPerson::-webkit-scrollbar {
+  display: none;
 }
+
+.allPerson {
+  max-height: 82.5vh;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+

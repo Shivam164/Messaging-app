@@ -1,29 +1,48 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './styles/ChatInfo.css'
+import WorkIcon from '@mui/icons-material/Work';
+import PhoneIcon from '@mui/icons-material/Phone';
+import EmailIcon from '@mui/icons-material/Email';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { ProfileContext } from './Contexts/GlobalState';
+var selectedChatCompare;
 
 function ChatInfo() {
+
+  const {selectedChat, profile, setNewMessage} = useContext(ProfileContext);
+  useEffect(() => {
+    selectedChatCompare = selectedChat;
+  }, [selectedChat]);
+  const OtherUser = () => {
+    const allUsers = selectedChat.users;
+    return {
+      name : allUsers[((allUsers[0]._id === profile._id)? 1 : 0)].name,
+      email : allUsers[((allUsers[0]._id === profile._id)? 1 : 0)].emailId,
+      image : allUsers[((allUsers[0]._id === profile._id)? 1 : 0)].image
+    }
+  }
   return (
     <div className='chatInfo'>
-        <img src="https://www.w3schools.com/w3images/avatar2.png" className='profile-img'></img>
-        <h2 className='heading'>Shivam</h2><br />
+      {selectedChat && 
+        <>
+        <img src={OtherUser().image} className='profile-img'></img>
+        <h2 className='heading'>{OtherUser().name}</h2><br />
         <div className='Info-flex' align='left'>
            <div>
-           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfeW1siu3VhX3F59CRpR2fOPgJdDCDFZOdTG_quTyjTerf29JqdAIhOpOE61nXX8jiEy0&usqp=CAU" className='icon-img'></img> Company
-               <textarea></textarea>
+           <WorkIcon />Company :  Undisclosed 
           </div>
           <div>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJZ9WCaRNgk94ot5rm4Lo4F9YW5M7Vc7uMWg&usqp=CAU" className='icon-img'></img>  Role
-                 <textarea className='text-role'></textarea>
+            <AccountCircleIcon />Role : Undisclosed  
           </div>
           <div>
-            <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/phone-512.png" className='icon-img'></img> Phone no
-                <textarea></textarea>
+            <PhoneIcon/>Phone no : Undisclosed 
           </div>
           <div>
-            <img src="https://cdn.icon-icons.com/icons2/2768/PNG/512/email_icon_176616.png" className='icon-img'></img>  E-Mail id.
-                <textarea></textarea>
+            <EmailIcon />E-Mail id. : {OtherUser().email}
           </div>
         </div>
+        </>}
+        {!selectedChat && <img src="https://i.pinimg.com/564x/7f/26/e7/7f26e71b2c84e6b16d4f6d3fd8a58bca.jpg" className='default-img'></img>}
     </div>
   )
 }
