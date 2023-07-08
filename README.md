@@ -1,8 +1,31 @@
 # Chat Webapp
 Welcome to Chat Webapp, a messaging chat application that allows you to communicate with others in real time.
 
-## Live Project
-<a href = "https://msgapp-mern.herokuapp.com/"> Visit! </a>
+# Demo
+
+
+https://github.com/AnkushGoel251/Messaging-app/assets/77546629/418908b3-5656-47cc-86eb-1246aa8cc274
+
+
+
+
+## Preview
+
+## Sign Up
+![image](https://drive.google.com/uc?id=1On5UeLsRCTA-tKuBM4tWfrtM0DP2KKd8)
+
+## Verification
+![image](https://drive.google.com/uc?id=1Dv5RCzZ8pwgdYR5sG8ZmqCRRmTDczukR)
+
+## Login
+![image](https://drive.google.com/uc?id=1wCe894Of5M-p9kNRGGVu770v3HaGfQEt)
+
+## Search
+![image](https://drive.google.com/uc?id=1o5iIXyMBLOcBB_B6ovKnDlMFV3KH0p4c)
+
+## Chat
+![image](https://drive.google.com/uc?id=1HYebPYatV4v1uvtaBnwG2znyLwP4tLCf)
+
 
 ## Contact
 <p>Ankush Goel : <a href = "http://www.linkedin.com/in/ankush-goel-822733211"> Linkedin </a>, <a href = "https://twitter.com/AnkushG04310426"> Twitter </a></p>
