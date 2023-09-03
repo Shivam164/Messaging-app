@@ -15,6 +15,7 @@ const history = useHistory();
 
 
 const submitDetails = async () => {
+  console.log(process.env.REACT_APP_SERVER_URL);
     const config = {
         header: {
           "Content-Type": "application/json",
@@ -29,7 +30,7 @@ const submitDetails = async () => {
       try{
   
         const { data } = await axios.post(
-          "http://localhost:5000/api/auth/login",
+          `${process.env.REACT_APP_SERVER_URL}/api/auth/login`,
           BODY,
           config
         );

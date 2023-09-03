@@ -47,7 +47,7 @@ function MessagesSection() {
       setLoading(true);
 
       const { data } = await axios.post(
-        'http://localhost:5000/api/chat/allMessages',
+        `${process.env.REACT_APP_SERVER_URL}/api/chat/allMessages`,
         BODY,
         config
       );
@@ -95,7 +95,7 @@ function MessagesSection() {
 
     try{
       const { data } = await axios.post(
-        'http://localhost:5000/api/chat/sendMessages',
+        `${process.env.REACT_APP_SERVER_URL}/api/chat/sendMessages`,
         BODY,
         config
       );

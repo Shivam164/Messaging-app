@@ -31,7 +31,7 @@ function Contacts() {
     try{
 
       const { data } = await axios.post(
-        "http://localhost:5000/api/user/findContact",
+        `${process.env.REACT_APP_SERVER_URL}/api/user/findContact`,
         BODY,
         config
       );
