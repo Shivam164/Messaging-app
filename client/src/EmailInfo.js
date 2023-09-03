@@ -34,7 +34,7 @@ function EmailInfo({ errorMessage, mailSent, setErrorMessage, setMailSent, email
     try{
 
       const response = await axios.post(
-        "/api/auth/signup",
+        "http://localhost:5000/api/auth/signup",
         BODY,
         config
       );

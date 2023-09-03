@@ -27,7 +27,7 @@ function SingleContact({name, image, email, setErrorMsg, _id}) {
 
     try{
       const { data } = await axios.post(
-        "/api/chat/accessGroup",
+        "http://localhost:5000/api/chat/accessGroup",
         BODY,
         config
       )
@@ -59,7 +59,7 @@ function SingleContact({name, image, email, setErrorMsg, _id}) {
 
     try{
       const { data } = await axios.put(
-        "/api/user/removeContact",
+        "http://localhost:5000/api/user/removeContact",
         BODY,
         config
       )

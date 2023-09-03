@@ -29,7 +29,7 @@ const submitDetails = async () => {
       try{
   
         const { data } = await axios.post(
-          "/api/auth/login",
+          "http://localhost:5000/api/auth/login",
           BODY,
           config
         );

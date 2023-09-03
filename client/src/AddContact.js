@@ -27,7 +27,7 @@ export const AddContact = ({ name, image, emailId, _id, setSearchedUser, setShow
 
     try{
       const { data } = await axios.put(
-        "/api/user/addContact",
+        "http://localhost:5000/api/user/addContact",
         BODY,
         config
       );

@@ -4,8 +4,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const connectDB = require('./config/db');
 const errorHandler = require("./middleware/error");
+const cors = require('cors');
 
 const app = express();
+
+app.use(cors());
 
 
 // SETTING UP CONNECTION WITH THE DATABASE

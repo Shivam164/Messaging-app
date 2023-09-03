@@ -28,7 +28,7 @@ const OTPverify = ({ mailSent, errorMessage, email, setErrorMessage, setMailSent
     try{
 
       const { data } = await axios.put(
-        "/api/auth/otpverification",
+        "http://localhost:5000/api/auth/otpverification",
         BODY,
         config
       );
@@ -75,7 +75,7 @@ const OTPverify = ({ mailSent, errorMessage, email, setErrorMessage, setMailSent
     try{
 
       const response = await axios.post(
-        "/api/auth/signup",
+        "http://localhost:5000/api/auth/signup",
         BODY,
         config
       );

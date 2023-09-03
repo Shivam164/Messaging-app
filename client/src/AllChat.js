@@ -29,7 +29,7 @@ function AllChat() {
     try{
 
       const { data } = await axios.post(
-        "/api/chat/fetchChats",
+        "http://localhost:5000/api/chat/fetchChats",
         BODY,
         config
       );
