@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import AddIcon from '@mui/icons-material/Add';
 import './styles/AddContact.css'
 import { ProfileContext } from './Contexts/GlobalState';
@@ -47,7 +47,7 @@ export const AddContact = ({ name, image, emailId, _id, setSearchedUser, setShow
   return (
     <div className='addContact'>
         <div className = "addContact__info">
-            <img src={image} className="contact__image"/> 
+            <img src={image} className="contact__image" alt="image"/> 
             <p>{name}</p>
         </div>
         <button className='addContact__btn' onClick = {handleAdd}><AddIcon className='add__icon'/></button>

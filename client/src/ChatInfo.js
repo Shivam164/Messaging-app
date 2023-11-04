@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import './styles/ChatInfo.css'
 import WorkIcon from '@mui/icons-material/Work';
 import PhoneIcon from '@mui/icons-material/Phone';
@@ -25,7 +25,7 @@ function ChatInfo() {
     <div className='chatInfo'>
       {selectedChat && 
         <>
-        <img src={OtherUser().image} className='profile-img'></img>
+        <img src={OtherUser().image} className='profile-img' alt="photo"></img>
         <h2 className='heading'>{OtherUser().name}</h2><br />
         <div className='Info-flex' align='left'>
            <div>
@@ -42,7 +42,7 @@ function ChatInfo() {
           </div>
         </div>
         </>}
-        {!selectedChat && <img src="https://i.pinimg.com/564x/7f/26/e7/7f26e71b2c84e6b16d4f6d3fd8a58bca.jpg" className='default-img'></img>}
+        {!selectedChat && <img src="https://i.pinimg.com/564x/7f/26/e7/7f26e71b2c84e6b16d4f6d3fd8a58bca.jpg" className='default-img' alt="image"></img>}
     </div>
   )
 }
