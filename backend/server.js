@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const connectDB = require('./config/db');
 const errorHandler = require("./middleware/error");
 const cors = require('cors');
+const path = require("path");
 
 const app = express();
 
@@ -24,6 +25,22 @@ app.use(express.json());
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/user', require('./routes/user'));
 app.use('/api/chat', require('./routes/chat'));
+
+// DEPLOYMENT
+
+const __dirname1 = path.resolve();
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname1, "../client/build")));
+
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname1, "client", "build", "index.html"))
+  );
+} else {
+  app.get("/", (req, res) => {
+    res.send("API is running..");
+  });
+}
 
 // THIS MIDDLEWARE WILL TAKE CARE OF ALL THE ERROS
 app.use(errorHandler);
