@@ -7,7 +7,7 @@ import axios from 'axios';
 import { ProfileContext } from './Contexts/GlobalState';
 import io from 'socket.io-client';
 var socket, selectedChatCompare;
-const ENDPOINT = "http://localhost:5000";
+const ENDPOINT = "https://messaging-app-vr4r.onrender.com";
 
 function MessagesSection() {
 
