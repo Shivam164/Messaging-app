@@ -23,8 +23,6 @@ export const AddContact = ({ name, image, emailId, _id, setSearchedUser, setShow
       userEmailId : profile.emailId
     }
 
-    console.log(BODY);
-
     try{
       const { data } = await axios.put(
         `${process.env.REACT_APP_SERVER_URL}/api/user/addContact`,
@@ -35,7 +33,6 @@ export const AddContact = ({ name, image, emailId, _id, setSearchedUser, setShow
       await setShowUser(false);
       await setSearchedUser({});
     }catch(error){
-      console.log(error);
       setErrorMsg(error.response.data.message);
       setTimeout(() => {
         setErrorMsg("");

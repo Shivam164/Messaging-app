@@ -20,7 +20,6 @@ function AllChat() {
       }
     }
 
-    console.log("profile Id" , profile._id);
     const BODY = {
       user : {
         _id : profile._id
@@ -34,7 +33,6 @@ function AllChat() {
         config
       );
 
-      console.log(data);
       setallChat(data);
       setLoading(false);
 

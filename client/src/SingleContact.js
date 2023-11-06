@@ -34,9 +34,7 @@ function SingleContact({name, image, email, setErrorMsg, _id}) {
 
       await setSelectedChat(data);
       history.push("/");
-      console.log(data);
     }catch(error){
-      console.log(error.response);
       setErrorMsg(error.response.data.message);
       setTimeout(() => {
         setErrorMsg("");

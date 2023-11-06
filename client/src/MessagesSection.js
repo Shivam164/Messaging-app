@@ -25,11 +25,6 @@ function MessagesSection() {
     socket.on("connection", () => setSocketConnected(true));
   },[]);
 
-  useEffect(() => {
-    console.log("Selected chat => ", selectedChat);
-    console.log("selected chat got changed");
-  },[selectedChat]);
-
   const fetchMessages = async () => {
     if (!selectedChat) return;
 
@@ -52,7 +47,6 @@ function MessagesSection() {
         config
       );
       setMessages(data);
-      console.log(data);
       setLoading(false);
       socket.emit("join chat", selectedChat._id);
     } catch (error) {
@@ -100,7 +94,6 @@ function MessagesSection() {
         config
       );
 
-      console.log(data);
       setNewMessage(data);
       socket.emit("new message", data);
       setMessages([...messages, data]);

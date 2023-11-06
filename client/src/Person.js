@@ -16,9 +16,7 @@ function Person({ name, image, isGroup, chat }) {
   }
 
   useEffect(() => {
-    console.log("here");
     if(!newMessage){
-      console.log(chat);
       if(chat && chat.latestMessage){
         setlatestMsg(makeItShort(chat.latestMessage.text));
         setlatestMsgTime(new Date(chat.latestMessage.createdAt).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'}));
@@ -26,9 +24,7 @@ function Person({ name, image, isGroup, chat }) {
       return;
     }else{
       if(newMessage.group._id === chat._id){
-        console.log("I am here");
         setlatestMsg(makeItShort(newMessage.text));
-        // console.log(typeof(new Date(newMessage.createdAt).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})));
         setlatestMsgTime(new Date(newMessage.createdAt).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'}));
       }
     }

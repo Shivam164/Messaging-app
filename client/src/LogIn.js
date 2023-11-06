@@ -15,7 +15,6 @@ const history = useHistory();
 
 
 const submitDetails = async () => {
-  console.log(process.env.REACT_APP_SERVER_URL);
     const config = {
         header: {
           "Content-Type": "application/json",
@@ -34,14 +33,9 @@ const submitDetails = async () => {
           BODY,
           config
         );
-
-        console.log(data);
   
         await setProfile(data.user);
-        console.log("token => ", localStorage.getItem("authToken"));
-        console.log("received token => ", data.token);
       await localStorage.setItem("authToken", data.token);
-      console.log("token => ", localStorage.getItem("authToken"));
       setSignedIn(true);
       history.push('/');
   

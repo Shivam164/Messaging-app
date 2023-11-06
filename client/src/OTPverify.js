@@ -32,7 +32,6 @@ const OTPverify = ({ mailSent, errorMessage, email, setErrorMessage, setMailSent
         BODY,
         config
       );
-      console.log(data.user);
       await setProfile(data.user);
       await localStorage.setItem("authToken", data.token);
       setSignedIn(true);
@@ -49,8 +48,6 @@ const OTPverify = ({ mailSent, errorMessage, email, setErrorMessage, setMailSent
   }
 
   const handleResend = async () => {
-
-    console.log(password, email);
 
     if(password == "" || email == ""){
       setErrorMessage("Enter email and password in signup section");;
