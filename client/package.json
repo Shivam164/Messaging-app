@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://msg-app-backend-0fr7.onrender.com",
+  "proxy": "https://messaging-app-vr4r.onrender.com",
   "dependencies": {
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
