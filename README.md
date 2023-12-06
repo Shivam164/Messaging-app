@@ -1,15 +1,13 @@
-# Chat Webapp
-Welcome to Chat Webapp, a messaging chat application that allows you to communicate with others in real time.
+# Messaging-app
+Welcome to Chat Webapp, a messaging chat application that allows you to communicate with others in real time. Connect with other people on the platform.
+
+Application is built using MERN stack, socket.io and web services. It uses encryption to store confidential data.
 
 # Demo
-
-
 https://github.com/AnkushGoel251/Messaging-app/assets/77546629/418908b3-5656-47cc-86eb-1246aa8cc274
 
-
-
-
 ## Preview
+https://msg-app-wrsd.onrender.com
 
 ## Sign Up
 ![image](https://drive.google.com/uc?id=1On5UeLsRCTA-tKuBM4tWfrtM0DP2KKd8)
@@ -44,13 +42,30 @@ https://github.com/AnkushGoel251/Messaging-app/assets/77546629/418908b3-5656-47c
 
 ## Getting Started
 To get started with Chat Webapp, follow these steps:
+
+```
+cd Messaging-app
+cd backend && npm install
+cd ../client && npm install
+```
+
+After installing run the backend code
+```
+cd Messaging-app/backend
+nodemon server.js
+```
+
+Run client code
+```
+cd Messaging-app/client
+npm start
+```
+
 <ol>
         <li class="home">Install the necessary dependencies by running npm install</li>
         <li class="home">Start the development server by running npm start</li>
         <li class="home">Navigate to http://localhost:3000 in your web browser to access the app</li>
 </ol>
-
-
 
 
 ## Contributing
