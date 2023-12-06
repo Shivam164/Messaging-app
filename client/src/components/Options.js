@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
-import './styles/Options.css';
-import { ProfileContext } from './Contexts/GlobalState';
+import '../styles/Options.css';
+import { ProfileContext } from '../Contexts/GlobalState';
+import ChatIcon from '@mui/icons-material/Chat';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SettingsIcon from '@mui/icons-material/Settings';
@@ -20,6 +21,8 @@ function Options() {
       </div>
 
       <div className="user__options">
+        <button className='btn-options' onClick={() => history.push('/')}><ChatIcon/><p>Chats</p>
+        </button>
         <button className='btn-options'><SearchIcon/><p>Search</p>
         </button>
         <button className='btn-options' onClick={() => history.push('/contacts')}><AccountCircleIcon/>  <p>Contacts</p>
@@ -28,13 +31,13 @@ function Options() {
         </button>
       </div>
       
-        <div className='options-a' align='left'>
-          <h1 className='heading'>Groups</h1>
-          <a href='' className='btn-options'>
-            <AddIcon/> 
-            <p>New Group</p>
-          </a>
-        </div>
+      <div className='options-a' align='left'>
+        <h1 className='heading'>Groups</h1>
+        <a href='' className='btn-options'>
+          <AddIcon/> 
+          <p>New Group</p>
+        </a>
+      </div>
         
     </div>
     

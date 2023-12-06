@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
-import './styles/SignIn.css';
-import pic from './assets/signIn-img.png';
-import { ProfileContext } from './Contexts/GlobalState';
+import '../styles/SignIn.css';
+import pic from '../assets/signIn-img.png';
+import { ProfileContext } from '../Contexts/GlobalState';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 

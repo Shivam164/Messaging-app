@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import AddIcon from '@mui/icons-material/Add';
-import './styles/AddContact.css'
-import { ProfileContext } from './Contexts/GlobalState';
+import '../styles/AddContact.css'
+import { ProfileContext } from '../Contexts/GlobalState';
 import axios from 'axios';
 
 export const AddContact = ({ name, image, emailId, _id, setSearchedUser, setShowUser, setErrorMsg }) => {

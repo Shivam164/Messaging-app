@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import './styles/EmailInfo.css';
+import '../styles/EmailInfo.css';
 import { useHistory } from 'react-router-dom';
 import axios from "axios";
 

@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
-import './styles/MessagesSection.css';
+import '../styles/MessagesSection.css';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import SendIcon from '@mui/icons-material/Send';
 import SingleMsg from './SingleMsg';
 import axios from 'axios';
-import { ProfileContext } from './Contexts/GlobalState';
+import { ProfileContext } from '../Contexts/GlobalState';
 import io from 'socket.io-client';
 var socket, selectedChatCompare;
 const ENDPOINT = "https://messaging-app-vr4r.onrender.com/";

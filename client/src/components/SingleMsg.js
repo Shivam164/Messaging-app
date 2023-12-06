@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { ProfileContext } from './Contexts/GlobalState';
-import './styles/SingleMsg.css';
+import { ProfileContext } from '../Contexts/GlobalState';
+import '../styles/SingleMsg.css';
 
 function SingleMsg({ message }) {
 

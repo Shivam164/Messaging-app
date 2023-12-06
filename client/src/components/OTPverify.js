@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
-import './styles/PhoneNumberInfo.css';
+import '../styles/PhoneNumberInfo.css';
 import axios from 'axios';
-import { ProfileContext } from './Contexts/GlobalState';
+import { ProfileContext } from '../Contexts/GlobalState';
 import { useHistory } from 'react-router-dom';
 
 const OTPverify = ({ mailSent, errorMessage, email, setErrorMessage, setMailSent, password, name, setName }) => {

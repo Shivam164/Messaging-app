@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { ProfileContext } from './Contexts/GlobalState';
-import './styles/Person.css';
+import { ProfileContext } from '../Contexts/GlobalState';
+import '../styles/Person.css';
 
 function Person({ name, image, isGroup, chat }) {
 

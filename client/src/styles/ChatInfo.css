@@ -1,7 +1,10 @@
 .chatInfo {
   flex: 2;
+  border: 2px solid lightgray;
+  border-left: 0;
 }
 .profile-img{
+  margin-top: 2rem;
   border-radius: 50%;
   height: 8.0rem;
 }
@@ -19,3 +22,6 @@
   align-items: center;
   margin-bottom: 0.5rem;
 }
+/* .chat_details > p{
+  padding-left: 2px;
+} */

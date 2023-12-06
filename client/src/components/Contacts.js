@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
 import SingleContact from './SingleContact'
-import './styles/Contacts.css'
+import '../styles/Contacts.css'
 import AddIcon from '@mui/icons-material/Add';
 import Options from './Options';
 import ChatInfo from './ChatInfo';
-import { ProfileContext } from './Contexts/GlobalState';
+import { ProfileContext } from '../Contexts/GlobalState';
 import axios from 'axios';
 import { AddContact } from './AddContact';
 
