@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 import DeleteIcon from '@mui/icons-material/Delete';
-import './styles/SingleContact.css';
-import { ProfileContext } from './Contexts/GlobalState';
+import '../styles/SingleContact.css';
+import { ProfileContext } from '../Contexts/GlobalState';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 

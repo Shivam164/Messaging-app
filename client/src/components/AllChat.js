@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
-import './styles/AllChat.css';
+import '../styles/AllChat.css';
 import CallIcon from '@mui/icons-material/Call';
 import CommentIcon from '@mui/icons-material/Comment';
-import { ProfileContext } from './Contexts/GlobalState';
+import { ProfileContext } from '../Contexts/GlobalState';
 import Person from './Person';
 import axios from 'axios';
 
