@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
-import SingleContact from './SingleContact'
+import SingleContact from '../components/SingleContact'
 import '../styles/Contacts.css'
 import AddIcon from '@mui/icons-material/Add';
-import Options from './Options';
-import ChatInfo from './ChatInfo';
+import Options from '../components/Options';
+import ChatInfo from '../components/ChatInfo';
 import { ProfileContext } from '../Contexts/GlobalState';
 import axios from 'axios';
-import { AddContact } from './AddContact';
+import { AddContact } from '../components/AddContact';
 
 function Contacts() {
 

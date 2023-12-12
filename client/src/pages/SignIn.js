@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import '../styles/SignIn.css';
 import Carousel from 'react-elastic-carousel';
-import EmailInfo from './EmailInfo';
-import OTPverify from './OTPverify';
+import EmailInfo from '../components/EmailInfo';
+import OTPverify from '../components/OTPverify';
 import pic from '../assets/signIn-img.png';
 
 function SignIn() {

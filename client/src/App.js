@@ -1,10 +1,10 @@
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import SignIn from './components/SignIn';
-import LogIn from './components/LogIn';
+import SignIn from './pages/SignIn';
+import LogIn from './pages/LogIn';
 import PrivateRoute from './routing/PrivateRoute';
-import Contacts from './components/Contacts';
-import Home from './components/Home';
+import Contacts from './pages/Contacts';
+import Home from './pages/Home';
 
 function App() {
 
