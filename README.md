@@ -56,7 +56,7 @@ We welcome contributions to Chat Webapp. If you would like to contribute, please
 </ul>
 
 # Demo
-https://github.com/AnkushGoel251/Messaging-app/assets/77546629/418908b3-5656-47cc-86eb-1246aa8cc274
+[messaging_app_video.webm](https://github.com/Shivam164/Messaging-app/assets/77626594/00ed257e-49ac-4b8b-8136-e1d611bf6216)
 
 ## Webpages
 ![Image](https://raw.githubusercontent.com/Shivam164/Messaging-app/master/client/src/assets/collage.jpg)
@@ -64,3 +64,4 @@ https://github.com/AnkushGoel251/Messaging-app/assets/77546629/418908b3-5656-47c
 ## Contact
 <p>Ankush Goel : <a href = "http://www.linkedin.com/in/ankush-goel-822733211"> Linkedin </a>, <a href = "https://twitter.com/AnkushG04310426"> Twitter </a></p>
 <p>Shivam : <a href = "https://www.linkedin.com/in/shivam164/?originalSubdomain=in"> Linkedin </a>, <a href = "https://twitter.com/ShivamPandey164"> Twitter </a></p>
+
