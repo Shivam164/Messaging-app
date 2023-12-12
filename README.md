@@ -56,7 +56,7 @@ We welcome contributions to Chat Webapp. If you would like to contribute, please
 </ul>
 
 # Demo
-[messaging_app_video.webm](https://github.com/Shivam164/Messaging-app/assets/77626594/00ed257e-49ac-4b8b-8136-e1d611bf6216)
+[Demo Video](https://github.com/Shivam164/Messaging-app/assets/77626594/00ed257e-49ac-4b8b-8136-e1d611bf6216)
 
 ## Webpages
 ![Image](https://raw.githubusercontent.com/Shivam164/Messaging-app/master/client/src/assets/collage.jpg)
